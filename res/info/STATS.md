@@ -1,6 +1,6 @@
 # Statistics
 
-inbaverSim collected statistics during simulations. Collected statistics
+collected statistics during simulations. Collected statistics
 maybe categorized into the following types.
 
 1. Network level - network wide statistics
