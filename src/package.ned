@@ -1,0 +1,3 @@
+package phoenix;
+
+@license(LGPL);

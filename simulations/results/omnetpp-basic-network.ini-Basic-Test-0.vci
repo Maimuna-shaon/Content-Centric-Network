@@ -1,0 +1,81 @@
+file 606822 1734358987                                          
+version 3
+run Basic-Test-0-20241216-20:22:31-24248
+attr configname Basic-Test
+attr datetime 20241216-20:22:31
+attr datetimef 20241216-202231
+attr experiment Basic-Test
+attr inifile omnetpp-basic-network.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network BasicNetwork
+attr processid 24248
+attr repetition 0
+attr replication #0
+attr resultdir results/
+attr runnumber 0
+attr seedset 0
+config image-path ../../inet4.5/images
+config **.contentServer.numApps 1
+config **.contentServer.app[0].typename ContentHostApp
+config **.contentServer.app[0].hostedPrefixNames "\"ccnx://spacetime.com/\""
+config **.contentServer.app[0].dataNamePrefix "\"info\""
+config **.contentServer.app[0].segmentSize 1000byte
+config **.contentServer.app[0].numSegmentsPerFile 5
+config **.contentServer.app[0].cacheTime 2h
+config **.wirelessNode[*].numApps 1
+config **.wirelessNode[*].app[0].typename ContentDownloadApp
+config **.wirelessNode[*].app[0].interContentDownloadInterval 100s
+config **.wirelessNode[*].app[0].requestedPrefixNames "\"ccnx://spacetime.com/\""
+config **.wirelessNode[*].app[0].dataNamePrefix "\"info\""
+config **.wirelessNode[*].app[0].interestRetransmitTimeout 10s
+config **.wirelessNode[*].btWirelessRange 300m
+config **.wirelessNode[*].wlanWirelessRange 300m
+config **.wirelessAccessRouter.wlanWirelessRange 300m
+config **.constraintAreaMinX 0m
+config **.constraintAreaMinY 0m
+config **.constraintAreaMinZ 0m
+config **.constraintAreaMaxX 300m
+config **.constraintAreaMaxY 300m
+config **.constraintAreaMaxZ 0m
+config **.updateInterval 1s
+config **.initFromDisplayString true
+config network BasicNetwork
+config sim-time-limit 24h
+config repeat 1
+config num-rngs 8
+config seed-0-mt 1000
+config seed-1-mt 2000
+config seed-2-mt 3000
+config seed-3-mt 4000
+config seed-4-mt 5000
+config seed-5-mt 6000
+config seed-6-mt 7000
+config seed-7-mt 8000
+config **.deus.rng-0 1
+config **.numen.rng-0 2
+config **.app[*].rng-0 3
+config **.fwd.rng-0 4
+config **.wired[*].rng-0 5
+config **.wireless[*].rng-0 6
+config **.mobility.rng-0 7
+config result-dir results/
+config output-vector-file results//omnetpp-basic-network.ini-Basic-Test-0.vec
+config output-scalar-file results//omnetpp-basic-network.ini-Basic-Test-0.sca
+config **.vector-recording true
+config **.scalar-recording true
+config **.statistic-recording true
+config record-eventlog false
+config eventlog-file results//omnetpp-basic-network.ini-Basic-Test-0.elog
+
+vector 0 BasicNetwork fwdNetworkCacheHitRatio:vector ETV
+attr recordingmode vector
+attr source fwdNetworkCacheHitRatio
+vector 1 BasicNetwork fwdNetworkCacheMissRatio:vector ETV
+attr recordingmode vector
+attr source fwdNetworkCacheMissRatio
+0	2770 307455 423 190896 100 31927.435456 9430 0 0.0074587107085775 16.973962384201 0.08405010796866
+1	310225 296595 423 190896 100 31927.435456 9430 0.99254128929142 1 9413.0260376158 9396.1361253396
+

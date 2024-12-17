@@ -1,0 +1,492 @@
+version 3
+run Basic-Test-0-20241216-20:22:31-24248
+attr configname Basic-Test
+attr datetime 20241216-20:22:31
+attr datetimef 20241216-202231
+attr experiment Basic-Test
+attr inifile omnetpp-basic-network.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network BasicNetwork
+attr processid 24248
+attr repetition 0
+attr replication #0
+attr resultdir results/
+attr runnumber 0
+attr seedset 0
+config image-path ../../inet4.5/images
+config **.contentServer.numApps 1
+config **.contentServer.app[0].typename ContentHostApp
+config **.contentServer.app[0].hostedPrefixNames "\"ccnx://spacetime.com/\""
+config **.contentServer.app[0].dataNamePrefix "\"info\""
+config **.contentServer.app[0].segmentSize 1000byte
+config **.contentServer.app[0].numSegmentsPerFile 5
+config **.contentServer.app[0].cacheTime 2h
+config **.wirelessNode[*].numApps 1
+config **.wirelessNode[*].app[0].typename ContentDownloadApp
+config **.wirelessNode[*].app[0].interContentDownloadInterval 100s
+config **.wirelessNode[*].app[0].requestedPrefixNames "\"ccnx://spacetime.com/\""
+config **.wirelessNode[*].app[0].dataNamePrefix "\"info\""
+config **.wirelessNode[*].app[0].interestRetransmitTimeout 10s
+config **.wirelessNode[*].btWirelessRange 300m
+config **.wirelessNode[*].wlanWirelessRange 300m
+config **.wirelessAccessRouter.wlanWirelessRange 300m
+config **.constraintAreaMinX 0m
+config **.constraintAreaMinY 0m
+config **.constraintAreaMinZ 0m
+config **.constraintAreaMaxX 300m
+config **.constraintAreaMaxY 300m
+config **.constraintAreaMaxZ 0m
+config **.updateInterval 1s
+config **.initFromDisplayString true
+config network BasicNetwork
+config sim-time-limit 24h
+config repeat 1
+config num-rngs 8
+config seed-0-mt 1000
+config seed-1-mt 2000
+config seed-2-mt 3000
+config seed-3-mt 4000
+config seed-4-mt 5000
+config seed-5-mt 6000
+config seed-6-mt 7000
+config seed-7-mt 8000
+config **.deus.rng-0 1
+config **.numen.rng-0 2
+config **.app[*].rng-0 3
+config **.fwd.rng-0 4
+config **.wired[*].rng-0 5
+config **.wireless[*].rng-0 6
+config **.mobility.rng-0 7
+config result-dir results/
+config output-vector-file results//omnetpp-basic-network.ini-Basic-Test-0.vec
+config output-scalar-file results//omnetpp-basic-network.ini-Basic-Test-0.sca
+config **.vector-recording true
+config **.scalar-recording true
+config **.statistic-recording true
+config record-eventlog false
+config eventlog-file results//omnetpp-basic-network.ini-Basic-Test-0.elog
+
+par BasicNetwork.wirelessAccessRouter.wiredInOut$o[0].channel typename "\"ned.DatarateChannel\""
+par BasicNetwork.wirelessAccessRouter.wiredInOut$o[0].channel disabled false
+attr mutable ""
+par BasicNetwork.wirelessAccessRouter.wiredInOut$o[0].channel delay 0s
+attr mutable ""
+attr unit s
+par BasicNetwork.wirelessAccessRouter.wiredInOut$o[0].channel datarate 1e+06bps
+attr mutable ""
+attr unit bps
+par BasicNetwork.wirelessAccessRouter.wiredInOut$o[0].channel ber 0
+attr mutable ""
+par BasicNetwork.wirelessAccessRouter.wiredInOut$o[0].channel per 0
+attr mutable ""
+par BasicNetwork.contentServer.wiredInOut$o[0].channel typename "\"ned.DatarateChannel\""
+par BasicNetwork.contentServer.wiredInOut$o[0].channel disabled false
+attr mutable ""
+par BasicNetwork.contentServer.wiredInOut$o[0].channel delay 0s
+attr mutable ""
+attr unit s
+par BasicNetwork.contentServer.wiredInOut$o[0].channel datarate 1e+06bps
+attr mutable ""
+attr unit bps
+par BasicNetwork.contentServer.wiredInOut$o[0].channel ber 0
+attr mutable ""
+par BasicNetwork.contentServer.wiredInOut$o[0].channel per 0
+attr mutable ""
+par BasicNetwork.wirelessAccessRouter.numen typename "\"inbaversim.Numen\""
+par BasicNetwork.wirelessAccessRouter.fwd typename "\"inbaversim.RFC8569Forwarder\""
+par BasicNetwork.wirelessAccessRouter.fwd maximumContentStoreSize 0byte
+attr unit byte
+par BasicNetwork.wirelessAccessRouter.wired[0] typename "\"inbaversim.WiredTransport\""
+par BasicNetwork.wirelessAccessRouter.wired[0] wiredTechnology "\"Ethernet\""
+par BasicNetwork.wirelessAccessRouter.wired[0] dataRate 1e+06bps
+attr unit bps
+par BasicNetwork.wirelessAccessRouter.wired[0] packetErrorRate 0pct
+attr unit pct
+par BasicNetwork.wirelessAccessRouter.wired[0] headerSize 32byte
+attr unit byte
+par BasicNetwork.wirelessAccessRouter.wireless[0] typename "\"inbaversim.WirelessTransport\""
+par BasicNetwork.wirelessAccessRouter.wireless[0] wirelessTechnology "\"WLAN\""
+par BasicNetwork.wirelessAccessRouter.wireless[0] operationMode "\"ap\""
+par BasicNetwork.wirelessAccessRouter.wireless[0] connectString "\"ccn\""
+par BasicNetwork.wirelessAccessRouter.wireless[0] wirelessRange 300meter
+attr unit meter
+par BasicNetwork.wirelessAccessRouter.wireless[0] dataRate 1e+06bps
+attr unit bps
+par BasicNetwork.wirelessAccessRouter.wireless[0] packetErrorRate 0pct
+attr unit pct
+par BasicNetwork.wirelessAccessRouter.wireless[0] scanInterval 1s
+attr unit s
+par BasicNetwork.wirelessAccessRouter.wireless[0] headerSize 32byte
+attr unit byte
+par BasicNetwork.wirelessAccessRouter.wireless[0] wirelessRangeRadiusShow true
+par BasicNetwork.wirelessAccessRouter.wireless[0] wirelessRangeRadiusColor "\"black\""
+par BasicNetwork.wirelessAccessRouter.mob typename "\"inet.mobility.static.StationaryMobility\""
+par BasicNetwork.wirelessAccessRouter.mob subjectModule "\"^\""
+par BasicNetwork.wirelessAccessRouter.mob coordinateSystemModule "\"\""
+par BasicNetwork.wirelessAccessRouter.mob displayStringTextFormat "\"p: %p\\nv: %v\""
+attr mutable ""
+par BasicNetwork.wirelessAccessRouter.mob updateDisplayString true
+par BasicNetwork.wirelessAccessRouter.mob constraintAreaMinX 0m
+attr unit m
+par BasicNetwork.wirelessAccessRouter.mob constraintAreaMinY 0m
+attr unit m
+par BasicNetwork.wirelessAccessRouter.mob constraintAreaMinZ 0m
+attr unit m
+par BasicNetwork.wirelessAccessRouter.mob constraintAreaMaxX 300m
+attr unit m
+par BasicNetwork.wirelessAccessRouter.mob constraintAreaMaxY 300m
+attr unit m
+par BasicNetwork.wirelessAccessRouter.mob constraintAreaMaxZ 0m
+attr unit m
+par BasicNetwork.wirelessAccessRouter.mob initialX 196.077m
+attr unit m
+par BasicNetwork.wirelessAccessRouter.mob initialY 61.6565m
+attr unit m
+par BasicNetwork.wirelessAccessRouter.mob initialZ 0m
+attr unit m
+par BasicNetwork.wirelessAccessRouter.mob initialLatitude "nan deg"
+attr unit deg
+par BasicNetwork.wirelessAccessRouter.mob initialLongitude "nan deg"
+attr unit deg
+par BasicNetwork.wirelessAccessRouter.mob initialAltitude 0m
+attr unit m
+par BasicNetwork.wirelessAccessRouter.mob initialHeading 0deg
+attr unit deg
+par BasicNetwork.wirelessAccessRouter.mob initialElevation 0deg
+attr unit deg
+par BasicNetwork.wirelessAccessRouter.mob initialBank 0deg
+attr unit deg
+par BasicNetwork.wirelessAccessRouter.mob initFromDisplayString true
+par BasicNetwork.wirelessAccessRouter.mob updateFromDisplayString true
+par BasicNetwork.wirelessAccessRouter typename "\"inbaversim.WirelessAccessRouter\""
+par BasicNetwork.wirelessAccessRouter numApps 0
+par BasicNetwork.wirelessAccessRouter numWiredTransports 1
+par BasicNetwork.wirelessAccessRouter numWirelessTransports 1
+par BasicNetwork.wirelessAccessRouter wirelessAccessRouterNumWiredTransports 1
+par BasicNetwork.wirelessAccessRouter wirelessAccessRouterNumWirelessTransports 1
+par BasicNetwork.wirelessAccessRouter forwarder "\"RFC8569Forwarder\""
+par BasicNetwork.wirelessAccessRouter wlanConnectString "\"ccn\""
+par BasicNetwork.wirelessAccessRouter wlanWirelessRange 300meter
+attr unit meter
+par BasicNetwork.wirelessAccessRouter wlanDataRate 1e+06bps
+attr unit bps
+par BasicNetwork.wirelessAccessRouter wlanPacketErrorRate 0pct
+attr unit pct
+par BasicNetwork.wirelessAccessRouter ethDataRate 1e+06bps
+attr unit bps
+par BasicNetwork.wirelessAccessRouter ethPacketErrorRate 0pct
+attr unit pct
+par BasicNetwork.wirelessAccessRouter mobility "\"StationaryMobility\""
+par BasicNetwork.wirelessNode[0].numen typename "\"inbaversim.Numen\""
+par BasicNetwork.wirelessNode[0].app[0] typename "\"inbaversim.ContentDownloadApp\""
+par BasicNetwork.wirelessNode[0].app[0] interContentDownloadInterval 100s
+attr unit s
+par BasicNetwork.wirelessNode[0].app[0] requestedPrefixNames "\"ccnx://spacetime.com/\""
+par BasicNetwork.wirelessNode[0].app[0] dataNamePrefix "\"info\""
+par BasicNetwork.wirelessNode[0].app[0] nextFileSuffix "intuniform(0, 9999)"
+par BasicNetwork.wirelessNode[0].app[0] maxHopsAllowed 16
+par BasicNetwork.wirelessNode[0].app[0] interestRetransmitTimeout 10s
+attr unit s
+par BasicNetwork.wirelessNode[0].fwd typename "\"inbaversim.RFC8569Forwarder\""
+par BasicNetwork.wirelessNode[0].fwd maximumContentStoreSize 0byte
+attr unit byte
+par BasicNetwork.wirelessNode[0].wireless[0] typename "\"inbaversim.WirelessTransport\""
+par BasicNetwork.wirelessNode[0].wireless[0] wirelessTechnology "\"WLAN\""
+par BasicNetwork.wirelessNode[0].wireless[0] operationMode "\"client\""
+par BasicNetwork.wirelessNode[0].wireless[0] connectString "\"ccn\""
+par BasicNetwork.wirelessNode[0].wireless[0] wirelessRange 300meter
+attr unit meter
+par BasicNetwork.wirelessNode[0].wireless[0] dataRate 1e+06bps
+attr unit bps
+par BasicNetwork.wirelessNode[0].wireless[0] packetErrorRate 0pct
+attr unit pct
+par BasicNetwork.wirelessNode[0].wireless[0] scanInterval 1s
+attr unit s
+par BasicNetwork.wirelessNode[0].wireless[0] headerSize 32byte
+attr unit byte
+par BasicNetwork.wirelessNode[0].wireless[0] wirelessRangeRadiusShow false
+par BasicNetwork.wirelessNode[0].wireless[0] wirelessRangeRadiusColor "\"black\""
+par BasicNetwork.wirelessNode[0].wireless[1] typename "\"inbaversim.WirelessTransport\""
+par BasicNetwork.wirelessNode[0].wireless[1] wirelessTechnology "\"Bluetooth\""
+par BasicNetwork.wirelessNode[0].wireless[1] operationMode "\"direct\""
+par BasicNetwork.wirelessNode[0].wireless[1] connectString "\"ccn\""
+par BasicNetwork.wirelessNode[0].wireless[1] wirelessRange 300meter
+attr unit meter
+par BasicNetwork.wirelessNode[0].wireless[1] dataRate 1e+06bps
+attr unit bps
+par BasicNetwork.wirelessNode[0].wireless[1] packetErrorRate 0pct
+attr unit pct
+par BasicNetwork.wirelessNode[0].wireless[1] scanInterval 1s
+attr unit s
+par BasicNetwork.wirelessNode[0].wireless[1] headerSize 32byte
+attr unit byte
+par BasicNetwork.wirelessNode[0].wireless[1] wirelessRangeRadiusShow false
+par BasicNetwork.wirelessNode[0].wireless[1] wirelessRangeRadiusColor "\"black\""
+par BasicNetwork.wirelessNode[0].mob typename "\"inet.mobility.static.StationaryMobility\""
+par BasicNetwork.wirelessNode[0].mob subjectModule "\"^\""
+par BasicNetwork.wirelessNode[0].mob coordinateSystemModule "\"\""
+par BasicNetwork.wirelessNode[0].mob displayStringTextFormat "\"p: %p\\nv: %v\""
+attr mutable ""
+par BasicNetwork.wirelessNode[0].mob updateDisplayString true
+par BasicNetwork.wirelessNode[0].mob constraintAreaMinX 0m
+attr unit m
+par BasicNetwork.wirelessNode[0].mob constraintAreaMinY 0m
+attr unit m
+par BasicNetwork.wirelessNode[0].mob constraintAreaMinZ 0m
+attr unit m
+par BasicNetwork.wirelessNode[0].mob constraintAreaMaxX 300m
+attr unit m
+par BasicNetwork.wirelessNode[0].mob constraintAreaMaxY 300m
+attr unit m
+par BasicNetwork.wirelessNode[0].mob constraintAreaMaxZ 0m
+attr unit m
+par BasicNetwork.wirelessNode[0].mob initialX 183.115m
+attr unit m
+par BasicNetwork.wirelessNode[0].mob initialY 285.085m
+attr unit m
+par BasicNetwork.wirelessNode[0].mob initialZ 0m
+attr unit m
+par BasicNetwork.wirelessNode[0].mob initialLatitude "nan deg"
+attr unit deg
+par BasicNetwork.wirelessNode[0].mob initialLongitude "nan deg"
+attr unit deg
+par BasicNetwork.wirelessNode[0].mob initialAltitude 0m
+attr unit m
+par BasicNetwork.wirelessNode[0].mob initialHeading 0deg
+attr unit deg
+par BasicNetwork.wirelessNode[0].mob initialElevation 0deg
+attr unit deg
+par BasicNetwork.wirelessNode[0].mob initialBank 0deg
+attr unit deg
+par BasicNetwork.wirelessNode[0].mob initFromDisplayString true
+par BasicNetwork.wirelessNode[0].mob updateFromDisplayString true
+par BasicNetwork.wirelessNode[0] typename "\"inbaversim.WirelessNode\""
+par BasicNetwork.wirelessNode[0] numApps 1
+par BasicNetwork.wirelessNode[0] numWiredTransports 0
+par BasicNetwork.wirelessNode[0] numWirelessTransports 2
+par BasicNetwork.wirelessNode[0] wirelessNodeNumWiredTransports 0
+par BasicNetwork.wirelessNode[0] wirelessNodeNumWirelessTransports 2
+par BasicNetwork.wirelessNode[0] forwarder "\"RFC8569Forwarder\""
+par BasicNetwork.wirelessNode[0] wlanConnectString "\"ccn\""
+par BasicNetwork.wirelessNode[0] wlanWirelessRange 300meter
+attr unit meter
+par BasicNetwork.wirelessNode[0] wlanDataRate 1e+06bps
+attr unit bps
+par BasicNetwork.wirelessNode[0] wlanPacketErrorRate 0pct
+attr unit pct
+par BasicNetwork.wirelessNode[0] btConnectString "\"ccn\""
+par BasicNetwork.wirelessNode[0] btWirelessRange 300meter
+attr unit meter
+par BasicNetwork.wirelessNode[0] btDataRate 1e+06bps
+attr unit bps
+par BasicNetwork.wirelessNode[0] btPacketErrorRate 0pct
+attr unit pct
+par BasicNetwork.wirelessNode[0] mobility "\"StationaryMobility\""
+par BasicNetwork.wirelessNode[1].numen typename "\"inbaversim.Numen\""
+par BasicNetwork.wirelessNode[1].app[0] typename "\"inbaversim.ContentDownloadApp\""
+par BasicNetwork.wirelessNode[1].app[0] interContentDownloadInterval 100s
+attr unit s
+par BasicNetwork.wirelessNode[1].app[0] requestedPrefixNames "\"ccnx://spacetime.com/\""
+par BasicNetwork.wirelessNode[1].app[0] dataNamePrefix "\"info\""
+par BasicNetwork.wirelessNode[1].app[0] nextFileSuffix "intuniform(0, 9999)"
+par BasicNetwork.wirelessNode[1].app[0] maxHopsAllowed 16
+par BasicNetwork.wirelessNode[1].app[0] interestRetransmitTimeout 10s
+attr unit s
+par BasicNetwork.wirelessNode[1].fwd typename "\"inbaversim.RFC8569Forwarder\""
+par BasicNetwork.wirelessNode[1].fwd maximumContentStoreSize 0byte
+attr unit byte
+par BasicNetwork.wirelessNode[1].wireless[0] typename "\"inbaversim.WirelessTransport\""
+par BasicNetwork.wirelessNode[1].wireless[0] wirelessTechnology "\"WLAN\""
+par BasicNetwork.wirelessNode[1].wireless[0] operationMode "\"client\""
+par BasicNetwork.wirelessNode[1].wireless[0] connectString "\"ccn\""
+par BasicNetwork.wirelessNode[1].wireless[0] wirelessRange 300meter
+attr unit meter
+par BasicNetwork.wirelessNode[1].wireless[0] dataRate 1e+06bps
+attr unit bps
+par BasicNetwork.wirelessNode[1].wireless[0] packetErrorRate 0pct
+attr unit pct
+par BasicNetwork.wirelessNode[1].wireless[0] scanInterval 1s
+attr unit s
+par BasicNetwork.wirelessNode[1].wireless[0] headerSize 32byte
+attr unit byte
+par BasicNetwork.wirelessNode[1].wireless[0] wirelessRangeRadiusShow false
+par BasicNetwork.wirelessNode[1].wireless[0] wirelessRangeRadiusColor "\"black\""
+par BasicNetwork.wirelessNode[1].wireless[1] typename "\"inbaversim.WirelessTransport\""
+par BasicNetwork.wirelessNode[1].wireless[1] wirelessTechnology "\"Bluetooth\""
+par BasicNetwork.wirelessNode[1].wireless[1] operationMode "\"direct\""
+par BasicNetwork.wirelessNode[1].wireless[1] connectString "\"ccn\""
+par BasicNetwork.wirelessNode[1].wireless[1] wirelessRange 300meter
+attr unit meter
+par BasicNetwork.wirelessNode[1].wireless[1] dataRate 1e+06bps
+attr unit bps
+par BasicNetwork.wirelessNode[1].wireless[1] packetErrorRate 0pct
+attr unit pct
+par BasicNetwork.wirelessNode[1].wireless[1] scanInterval 1s
+attr unit s
+par BasicNetwork.wirelessNode[1].wireless[1] headerSize 32byte
+attr unit byte
+par BasicNetwork.wirelessNode[1].wireless[1] wirelessRangeRadiusShow false
+par BasicNetwork.wirelessNode[1].wireless[1] wirelessRangeRadiusColor "\"black\""
+par BasicNetwork.wirelessNode[1].mob typename "\"inet.mobility.static.StationaryMobility\""
+par BasicNetwork.wirelessNode[1].mob subjectModule "\"^\""
+par BasicNetwork.wirelessNode[1].mob coordinateSystemModule "\"\""
+par BasicNetwork.wirelessNode[1].mob displayStringTextFormat "\"p: %p\\nv: %v\""
+attr mutable ""
+par BasicNetwork.wirelessNode[1].mob updateDisplayString true
+par BasicNetwork.wirelessNode[1].mob constraintAreaMinX 0m
+attr unit m
+par BasicNetwork.wirelessNode[1].mob constraintAreaMinY 0m
+attr unit m
+par BasicNetwork.wirelessNode[1].mob constraintAreaMinZ 0m
+attr unit m
+par BasicNetwork.wirelessNode[1].mob constraintAreaMaxX 300m
+attr unit m
+par BasicNetwork.wirelessNode[1].mob constraintAreaMaxY 300m
+attr unit m
+par BasicNetwork.wirelessNode[1].mob constraintAreaMaxZ 0m
+attr unit m
+par BasicNetwork.wirelessNode[1].mob initialX 144.657m
+attr unit m
+par BasicNetwork.wirelessNode[1].mob initialY 108.241m
+attr unit m
+par BasicNetwork.wirelessNode[1].mob initialZ 0m
+attr unit m
+par BasicNetwork.wirelessNode[1].mob initialLatitude "nan deg"
+attr unit deg
+par BasicNetwork.wirelessNode[1].mob initialLongitude "nan deg"
+attr unit deg
+par BasicNetwork.wirelessNode[1].mob initialAltitude 0m
+attr unit m
+par BasicNetwork.wirelessNode[1].mob initialHeading 0deg
+attr unit deg
+par BasicNetwork.wirelessNode[1].mob initialElevation 0deg
+attr unit deg
+par BasicNetwork.wirelessNode[1].mob initialBank 0deg
+attr unit deg
+par BasicNetwork.wirelessNode[1].mob initFromDisplayString true
+par BasicNetwork.wirelessNode[1].mob updateFromDisplayString true
+par BasicNetwork.wirelessNode[1] typename "\"inbaversim.WirelessNode\""
+par BasicNetwork.wirelessNode[1] numApps 1
+par BasicNetwork.wirelessNode[1] numWiredTransports 0
+par BasicNetwork.wirelessNode[1] numWirelessTransports 2
+par BasicNetwork.wirelessNode[1] wirelessNodeNumWiredTransports 0
+par BasicNetwork.wirelessNode[1] wirelessNodeNumWirelessTransports 2
+par BasicNetwork.wirelessNode[1] forwarder "\"RFC8569Forwarder\""
+par BasicNetwork.wirelessNode[1] wlanConnectString "\"ccn\""
+par BasicNetwork.wirelessNode[1] wlanWirelessRange 300meter
+attr unit meter
+par BasicNetwork.wirelessNode[1] wlanDataRate 1e+06bps
+attr unit bps
+par BasicNetwork.wirelessNode[1] wlanPacketErrorRate 0pct
+attr unit pct
+par BasicNetwork.wirelessNode[1] btConnectString "\"ccn\""
+par BasicNetwork.wirelessNode[1] btWirelessRange 300meter
+attr unit meter
+par BasicNetwork.wirelessNode[1] btDataRate 1e+06bps
+attr unit bps
+par BasicNetwork.wirelessNode[1] btPacketErrorRate 0pct
+attr unit pct
+par BasicNetwork.wirelessNode[1] mobility "\"StationaryMobility\""
+par BasicNetwork.contentServer.numen typename "\"inbaversim.Numen\""
+par BasicNetwork.contentServer.app[0] typename "\"inbaversim.ContentHostApp\""
+par BasicNetwork.contentServer.app[0] hostedPrefixNames "\"ccnx://spacetime.com/\""
+par BasicNetwork.contentServer.app[0] dataNamePrefix "\"info\""
+par BasicNetwork.contentServer.app[0] segmentSize 1000byte
+attr unit byte
+par BasicNetwork.contentServer.app[0] numSegmentsPerFile 5
+par BasicNetwork.contentServer.app[0] cacheTime 7200s
+attr unit s
+par BasicNetwork.contentServer.fwd typename "\"inbaversim.RFC8569Forwarder\""
+par BasicNetwork.contentServer.fwd maximumContentStoreSize 0byte
+attr unit byte
+par BasicNetwork.contentServer.wired[0] typename "\"inbaversim.WiredTransport\""
+par BasicNetwork.contentServer.wired[0] wiredTechnology "\"Ethernet\""
+par BasicNetwork.contentServer.wired[0] dataRate 1e+06bps
+attr unit bps
+par BasicNetwork.contentServer.wired[0] packetErrorRate 0pct
+attr unit pct
+par BasicNetwork.contentServer.wired[0] headerSize 32byte
+attr unit byte
+par BasicNetwork.contentServer.mob typename "\"inet.mobility.static.StationaryMobility\""
+par BasicNetwork.contentServer.mob subjectModule "\"^\""
+par BasicNetwork.contentServer.mob coordinateSystemModule "\"\""
+par BasicNetwork.contentServer.mob displayStringTextFormat "\"p: %p\\nv: %v\""
+attr mutable ""
+par BasicNetwork.contentServer.mob updateDisplayString true
+par BasicNetwork.contentServer.mob constraintAreaMinX 0m
+attr unit m
+par BasicNetwork.contentServer.mob constraintAreaMinY 0m
+attr unit m
+par BasicNetwork.contentServer.mob constraintAreaMinZ 0m
+attr unit m
+par BasicNetwork.contentServer.mob constraintAreaMaxX 300m
+attr unit m
+par BasicNetwork.contentServer.mob constraintAreaMaxY 300m
+attr unit m
+par BasicNetwork.contentServer.mob constraintAreaMaxZ 0m
+attr unit m
+par BasicNetwork.contentServer.mob initialX 254.997m
+attr unit m
+par BasicNetwork.contentServer.mob initialY 63.6998m
+attr unit m
+par BasicNetwork.contentServer.mob initialZ 0m
+attr unit m
+par BasicNetwork.contentServer.mob initialLatitude "nan deg"
+attr unit deg
+par BasicNetwork.contentServer.mob initialLongitude "nan deg"
+attr unit deg
+par BasicNetwork.contentServer.mob initialAltitude 0m
+attr unit m
+par BasicNetwork.contentServer.mob initialHeading 0deg
+attr unit deg
+par BasicNetwork.contentServer.mob initialElevation 0deg
+attr unit deg
+par BasicNetwork.contentServer.mob initialBank 0deg
+attr unit deg
+par BasicNetwork.contentServer.mob initFromDisplayString true
+par BasicNetwork.contentServer.mob updateFromDisplayString true
+par BasicNetwork.contentServer typename "\"inbaversim.ContentServer\""
+par BasicNetwork.contentServer numApps 1
+par BasicNetwork.contentServer numWiredTransports 1
+par BasicNetwork.contentServer numWirelessTransports 0
+par BasicNetwork.contentServer contentServerNumWiredTransports 1
+par BasicNetwork.contentServer contentServerNumWirelessTransports 0
+par BasicNetwork.contentServer forwarder "\"RFC8569Forwarder\""
+par BasicNetwork.contentServer ethDataRate 1e+06bps
+attr unit bps
+par BasicNetwork.contentServer ethPacketErrorRate 0pct
+attr unit pct
+par BasicNetwork.contentServer mobility "\"StationaryMobility\""
+par BasicNetwork.demiurge typename "\"inbaversim.Demiurge\""
+par BasicNetwork typename "\"inbaversim.simulations.BasicNetwork\""
+scalar BasicNetwork fwdNetworkCacheMissRatio:min 0.99254128929142
+attr recordingmode min
+attr source fwdNetworkCacheMissRatio
+scalar BasicNetwork fwdNetworkCacheMissRatio:max 1
+attr recordingmode max
+attr source fwdNetworkCacheMissRatio
+scalar BasicNetwork fwdNetworkCacheMissRatio:count 9430
+attr recordingmode count
+attr source fwdNetworkCacheMissRatio
+scalar BasicNetwork fwdNetworkCacheMissRatio:last 0.99257688229056
+attr recordingmode last
+attr source fwdNetworkCacheMissRatio
+scalar BasicNetwork fwdNetworkCacheHitRatio:min 0
+attr recordingmode min
+attr source fwdNetworkCacheHitRatio
+scalar BasicNetwork fwdNetworkCacheHitRatio:max 0.0074587107085775
+attr recordingmode max
+attr source fwdNetworkCacheHitRatio
+scalar BasicNetwork fwdNetworkCacheHitRatio:count 9430
+attr recordingmode count
+attr source fwdNetworkCacheHitRatio
+scalar BasicNetwork fwdNetworkCacheHitRatio:last 0.007423117709438
+attr recordingmode last
+attr source fwdNetworkCacheHitRatio
+scalar BasicNetwork appNetworkInterestRetransmissionCount:last nan
+attr recordingmode last
+attr source appNetworkInterestRetransmissionCount
+
